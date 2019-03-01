@@ -102,17 +102,33 @@ mammals %>%
   scale_x_log10()
 ```
 
-
-
 8. Now that you have the basic plot, color the points by taxonomic order.
 
-
+```{r}
+mammals %>%
+  ggplot(aes(x=newborn, y=gestation, color=order))+
+  geom_point()+
+  scale_x_log10()
+```
 
 9. Lastly, make the size of the points proportional to body mass.
 
+```{r}
+mammals %>%
+  ggplot(aes(x=newborn, y=gestation, color=order, size=mass))+
+  geom_point()+
+  scale_x_log10()
+```
 
 10. Make a plot that shows the range of lifespan by order.
 
+```{r}
+mammals %>%
+  ggplot(aes(x=newborn, y=`max. life`, fill=order))+
+  geom_boxplot()+
+  coord_flip()+
+  scale_y_log10()
+```
 
 ## Push your final code to [GitHub](https://github.com/FRS417-DataScienceBiologists)
 Make sure that you push your code into the appropriate folder. Also, be sure that you have check the `keep md` file in the knit preferences.
